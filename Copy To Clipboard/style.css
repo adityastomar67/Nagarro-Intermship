@@ -1,0 +1,27 @@
+body{
+    background-color: rgb(255, 229, 204);
+}
+.one, .two, .three{
+    text-align: center;
+
+}
+h1{
+    text-align: center;
+}
+.three{
+    margin-top: 50px;
+}
+.two{
+    margin-top: 50px;
+}
+#btn{
+    margin: 1%;
+    padding: 6px;
+    background-color: #42496e;
+    border:  rgb(0, 0, 0) solid #EDC7B7;
+    color:white;
+}
+textarea{
+    border-color: black;
+    text-align: left;
+}
