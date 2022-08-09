@@ -115,18 +115,18 @@ k();
 // -----------------------------------
 
 const person = {
-    name:"nagarro",
-    age:100,
-    isAutherised: false,
-    isUnicorn:true,
-    bestDomain:"analytics"
+  name: "nagarro",
+  age: 100,
+  isAutherised: false,
+  isUnicorn: true,
+  bestDomain: "analytics"
 }
 
 // question1: make copy of the object and manipulate values in the new copied object
 
 const person2 = Object.assign({}, person);
 
-person2.name = "Mohit Saini";
+person2.name = "Aditya Singh Tomar";
 person2.age = 20;
 person2.isAutherised = true;
 person2.isUnicorn = false;
@@ -136,9 +136,9 @@ person2.bestDomain = "Web Development";
 
 // question2: print all the properties using appropriate for loop
 
-for(let i in person2){
-    console.log(i+" -  "+person2[i]);                        //printing in console
-    document.write("<b>"+i+"</b>"+" - "+person2[i]+"<br>");         // displaying in the web page
+for (let i in person2) {
+  console.log(i + " -  " + person2[i]);                        //printing in console
+  document.write("<b>" + i + "</b>" + " - " + person2[i] + "<br>");         // displaying in the web page
 }
 
 
