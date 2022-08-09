@@ -35,7 +35,7 @@ function a(){
     console.log(x);
 }
 a();
-var x=2   
+var x=2
 
 // -----------------------------------
 
@@ -51,7 +51,7 @@ function a(){
     console.log(x);
 }
 a();
-let x=2 
+let x=2
 
 
 // -----------------------------------
@@ -70,7 +70,7 @@ let b=2;
 console.log(b);
 
 // ----------------------------------
- 
+
 
  function x(){
      var a =7;
@@ -104,7 +104,7 @@ function k(){
                 setTimeout(function(){
                     console.log(i);
                 },1000*i)
-        }   
+        }
         close(i);
         console.log("interview");
     }
@@ -130,16 +130,16 @@ person2.name = "Mohit Saini";
 person2.age = 20;
 person2.isAutherised = true;
 person2.isUnicorn = false;
-person2.bestDomain = "Web Development"; 
+person2.bestDomain = "Web Development";
 
 
 
-// question2: print all the properties using appropriate for loop 
+// question2: print all the properties using appropriate for loop
 
 for(let i in person2){
     console.log(i+" -  "+person2[i]);                        //printing in console
     document.write("<b>"+i+"</b>"+" - "+person2[i]+"<br>");         // displaying in the web page
-} 
+}
 
 
 
@@ -148,12 +148,12 @@ for(let i in person2){
 
 // theory questions you should also prepare
 // 1. what is GEC (global execution context)? -- mcp and cep
-// 2. single threaded meaning? 
+// 2. single threaded meaning?
 // 3. what is hoisting?
 // 4. call back queue
 // 5. let and const hoisted hote hai?? and kahan hote hai? (dead temporal zone mei hote hai) -->  read about dead temporal zone
 // 6. block scope and global scope
 // 7. closure?
 // 8. event loop
-// 9. asynchronous 
+// 9. asynchronous
 // 10. for each loop
