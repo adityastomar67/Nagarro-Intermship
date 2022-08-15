@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
+const auth = require("./routes/authRoutes");
 
 const app = express();
 mongoose.connect("mongodb://127.0.0.1:27017/twitter")
@@ -14,6 +15,8 @@ mongoose.connect("mongodb://127.0.0.1:27017/twitter")
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 app.use(express.static(path.join(__dirname, "/public")));
+
+app.use(auth);
 
 app.get("/", (req, res) => {
     res.render("home");
