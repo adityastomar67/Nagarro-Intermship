@@ -9,3 +9,4 @@
 - [Calculator using JS](https://adityastomar67.github.io/Nagarro-Internship/Calculator/)
 - [Form Validation](https://adityastomar67.github.io/Nagarro-Internship/Form%20Validation/)
 - [Copy To Clipboard](https://adityastomar67.github.io/Nagarro-Internship/Copy%20To%20Clipboard/)
+- [PopUp Box](https://adityastomar67.github.io/Nagarro-Internship/popup/)
