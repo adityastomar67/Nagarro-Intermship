@@ -11,3 +11,5 @@
 - [Copy To Clipboard](https://adityastomar67.github.io/Nagarro-Internship/Copy%20To%20Clipboard/)
 - [PopUp Box](https://adityastomar67.github.io/Nagarro-Internship/popup/)
 - [Image Slider](https://adityastomar67.github.io/Nagarro-Internship/Image%20Slider/)
+
+## Submitted By - [adityastomar67](https://github.com/adityastomar67/)
