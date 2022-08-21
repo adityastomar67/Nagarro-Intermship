@@ -1,56 +1,65 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const Post = require('../../models/post');
-// const { post } = require('../authRoutes');
-const {isLoggedIn} = require('../../middleware');
-const User = require('../../models/user');
+const Post = require("../../models/posts");
+const { isLoggedIn } = require("../../middleware");
+const User = require("../../models/user");
 
+// Get all the post
+router.get("/api/post", isLoggedIn, async (req, res) => {
+  const filter = req.query;
 
+  const results = await Post.find(filter).populate("postedBy").populate("replyTo");
 
-//get all the posts
+  let posts = await User.populate(results, { path: "replyTo.postedBy" });
 
-// To get all the posts
-router.get('/api/post',isLoggedIn,async(req, res) => {
+  res.json(posts);
+});
 
-    //populate means poora ka poor auser uthkar ajaega instead of one thing.
-        const posts=await Post.find({}).populate('postedBy');  //chnages (simply giving the method populate the thing what to populate)
-    //or sending the entire data of the user instead of just object_id
-        res.json(posts);
-    })
+router.get("/api/posts/:id", async (req, res) => {
+  const post = await Post.findById(req.params.id).populate("postedBy");
 
-//to add a new post
+  res.status(200).json(post);
+});
 
-router.post('/api/post' ,isLoggedIn, async (req,res)=>{
-    // console.log(req.body);
-    const post = {
-        content: req.body.content,
-        postedBy: req.user,
+// Create the new post
+router.post("/api/post", isLoggedIn, async (req, res) => {
+  let post = {
+    postedBy: req.user,
+    content: req.body.content,
+  };
 
-    }
-    const newpost = await Post.create(post);
-    res.json(newpost);
+  if (req.body.replyTo) {
+    post = {
+      ...post,
+      replyTo: req.body.replyTo,
+    };
+  }
 
-})
+  const newPost = await Post.create(post);
+  res.json(newPost);
+});
 
-// to add likes 
-router.patch('/api/posts/:id/like',isLoggedIn,async(req,res)=>{
+router.patch("/api/posts/:id/like", isLoggedIn, async (req, res) => {
+  const postId = req.params.id;
+  const userId = req.user._id;
 
-    // res.send("you hit the route");
-    const postId = req.params.id;
-    const userId = req.user._id;
-    
-    const isLiked = req.user.likes && req.user.likes.includes(postId);
-    
-    const option = isLiked ? '$pull':'$addToSet';
+  const isLiked = req.user.likes && req.user.likes.includes(postId);
 
-    req.user=await User.findByIdAndUpdate(userId,{[option]:{likes:postId}},{new:true});
+  const option = isLiked ? "$pull" : "$addToSet";
 
-    const post = await Post.findByIdAndUpdate(postId,{[option]:{likes:userId}},{new:true});
+  req.user = await User.findByIdAndUpdate(
+    userId,
+    { [option]: { likes: postId } },
+    { new: true }
+  );
 
+  const post = await Post.findByIdAndUpdate(
+    postId,
+    { [option]: { likes: userId } },
+    { new: true }
+  );
 
-    res.json(post);
-})
-
-
+  res.status(200).json(post);
+});
 
 module.exports = router;
