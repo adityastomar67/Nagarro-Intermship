@@ -315,10 +315,13 @@ h1 {
 
 #msg-text:focus {
     outline: none;
+    border-radius: 20px;
+    border: 1px solid black;
 }
 
 #send-msg-btn {
     border: none;
+    margin-top: 5px;
     background: none;
     background-color: var(--blue);
     color: var(--lightGrey);
