@@ -1,43 +1,35 @@
-const socket = io();
+const socket = io()
 
+async function loadMsgs() {
+    let allMsgs = await axios.get('/allmessages')
+    console.log(allMsgs)
 
-async function loadMsgs(){
-    let allMsgs = await axios.get('/allmessages');
-    console.log(allMsgs);
-
-    for(let msg of allMsgs.data){
+    for (let msg of allMsgs.data) {
         $('#all-msg-container').append(
             `<li>
                 <span>${msg.user}  <span>
                 <span>${msg.createdAt} <span>
                 <p>${msg.content}</p>
-    
+
             </li>`
         )
     }
-
-
 }
 
-loadMsgs();
+loadMsgs()
 
+$('#send-msg-btn').click(() => {
+    const textMsg = $('#msg-text').val()
 
-
-
-$('#send-msg-btn').click(()=>{
-    const textMsg = $('#msg-text').val();
-
-    socket.emit("send-msg",{
-        user:currentUser,
-        msg:textMsg,
+    socket.emit('send-msg', {
+        user: currentUser,
+        msg: textMsg,
     })
 
-    $('#msg-text').val("");
+    $('#msg-text').val('')
 })
 
-
-socket.on("recived-msg" , (data)=>{
-
+socket.on('recived-msg', (data) => {
     $('#all-msg-container').append(
         `<li>
             <span>${data.user} </span>
