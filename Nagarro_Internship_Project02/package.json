@@ -1,28 +1,30 @@
 {
   "name": "nagarro_internship_project2",
   "version": "1.0.0",
-  "description": "E-commerce website",
-  "main": "backend/server.js",
+  "description": "E-commerce website -- Course Bazaar",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backend/server.js",
-    "dev": "nodemon backend/server.js"
+    "start": "node app.js",
+    "dev": "nodemon ./app.js"
   },
   "author": "Aditya Singh Tomar",
   "license": "ISC",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
-    "cloudinary": "^1.26.3",
-    "cookie-parser": "^1.4.5",
-    "dotenv": "^10.0.0",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.8",
     "express": "^4.17.1",
-    "express-fileupload": "^1.2.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.13.5",
-    "nodemailer": "^6.6.3",
+    "express-session": "^1.17.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.9.2",
     "nodemon": "^2.0.19",
-    "stripe": "^8.174.0",
-    "validator": "^13.6.0"
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.0.1"
+  },
+  "engines": {
+    "node": "v11.3.0"
   }
 }

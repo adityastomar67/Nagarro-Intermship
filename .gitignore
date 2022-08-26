@@ -136,3 +136,7 @@ dist
 
 # SvelteKit build / generate output
 .svelte-kit
+
+Nagarro_Internship_Project02/package-lock.json
+Nagarro_Internship_Project02/.gitignore
+Nagarro_Internship_Project02/config.env
