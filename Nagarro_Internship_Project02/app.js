@@ -13,10 +13,7 @@ var User = require("./models/user");
 var OrderCount = require("./models/orderCount");
 var flash = require("connect-flash");
 
-// const dotenv = require("dotenv");
-// dotenv.config();
-
-mongoose.connect("mongodb://127.0.0.1:27017/web", { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+mongoose.connect("mongodb://127.0.0.1:27017/courseBazaar", { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
     console.log("DB Connected");
 }).catch((err) => {
     console.log("error");
@@ -70,5 +67,4 @@ OrderCount.find({}, function(err, orderCountObjects) {
     }
 });
 
-// app.listen(process.env.PORT || 3000, process.env.IP);
 app.listen(3000)
