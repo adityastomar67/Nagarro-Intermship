@@ -15,7 +15,7 @@ var orderSchema = new mongoose.Schema({
     checkoutCart: {
         items: [
             {
-                course: {
+                product: {
                     id: String,
                     name: String,
                     instructor: String,

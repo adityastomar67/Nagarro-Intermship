@@ -7,38 +7,38 @@
 				<hr class="mt-0">
 				<div class="row">
 					<div class="col-3">
-						 <a href="/products/<%= cartItem.course._id %>">
-						 	<div class="resp-img cart" style="background-image:url('<%= cartItem.course.image %>')"></div>
+						 <a href="/products/<%= cartItem.product._id %>">
+						 	<div class="resp-img cart" style="background-image:url('<%= cartItem.product.image %>')"></div>
 						 </a>
 					</div>
 					<div class="col-9">
-						<a href="/products/<%= cartItem.course._id %>">
+						<a href="/products/<%= cartItem.product._id %>">
 							<div class="a mb-2">
-								<%= cartItem.course.name.substring(0,50) %><% if(cartItem.course.name.length>50) { %>&nbsp...<% } %>
+								<%= cartItem.product.name.substring(0,50) %><% if(cartItem.product.name.length>50) { %>&nbsp...<% } %>
 							</div>
 						</a>
 
 						<h6>
-							<span class="mr-1">$<%= cartItem.course.price %></span>
+							<span class="mr-1">$<%= cartItem.product.price %></span>
 							<span class="nowrap">
-								<span class="mrp mr-1">$<%= cartItem.course.mrp %></span>
-								<span class="disc"><%= cartItem.course.disc_perc %>% off</span>
+								<span class="mrp mr-1">$<%= cartItem.product.mrp %></span>
+								<span class="disc"><%= cartItem.product.disc_perc %>% off</span>
 							</span>
-							<div class="disc nowrap">You Save $<%= cartItem.course.discount %></div>
+							<div class="disc nowrap">You Save $<%= cartItem.product.discount %></div>
 						</h6>
 
 						<div class="float-right ml-2">
-							<a href="/cart/<%= cartItem.course._id %>/rem">Remove</a> 
+							<a href="/cart/<%= cartItem.product._id %>/rem">Remove</a> 
 						</div>
 
 						<div>
 							Quantity 
 							<span class="nowrap">
-								<a href="/cart/<%= cartItem.course._id %>/dec">
+								<a href="/cart/<%= cartItem.product._id %>/dec">
 									<i class="fas fa-minus-circle"></i>
 								</a> 
 								<%= cartItem.qty %> 
-								<a href="/cart/<%= cartItem.course._id %>/inc">
+								<a href="/cart/<%= cartItem.product._id %>/inc">
 									<i class="fas fa-plus-circle"></i>
 								</a>
 							</span>
