@@ -36,14 +36,14 @@
 
           <h6>
             <% if(currentUser && currentUser.cart.items.some(function(cartItem){
-            return cartItem.products._id.equals(products._id); })) { %>
+            return cartItem.product._id.equals(products._id); })) { %>
             <a href="/cart"
               ><button class="btn btn-sm btn-dark mr-md-1">
                 Go to cart
               </button></a
             >
             <% } else { %>
-            <a href="/cart/new/<%= products._id %>/index"
+            <a href="/cart/new/<%= product._id %>/index"
               ><button class="btn btn-sm btn-dark mr-md-1">
                 Add to cart
               </button></a
