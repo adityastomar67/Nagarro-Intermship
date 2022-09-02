@@ -17,7 +17,7 @@ const io = socketio(server)
 const Chat = require('./models/chat')
 
 mongoose
-    .connect('mongodb://127.0.0.1:27017/twitter')
+    .connect('mongodb://127.0.0.1:27017/tweet')
     .then(() => {
         console.log('db connected')
     })
